@@ -109,6 +109,9 @@ document.querySelector('#app').innerHTML = `
           Reviewer: release-reviewers@acme.dev
         </a>
       </p>
+      <p class="footer-guidance">
+        Release owner guidance: confirm checklist completion and acknowledge any Sev-1 page within 15 minutes.
+      </p>
     </footer>
   </main>
 `;
