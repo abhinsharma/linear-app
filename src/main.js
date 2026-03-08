@@ -96,7 +96,10 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>Release Dashboard</p>
-      <p>Updated every 5 minutes</p>
+      <p class="footer-meta">
+        Updated every 5 minutes
+        <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+      </p>
     </footer>
   </main>
 `;
