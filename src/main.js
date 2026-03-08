@@ -54,6 +54,51 @@ const releaseHealth = [
   }
 ];
 
+const releaseGuidance = [
+  {
+    label: 'Next step',
+    value: 'Complete migration dry-run before Wave 3'
+  },
+  {
+    label: 'Owner',
+    value: 'Platform Release Ops'
+  },
+  {
+    label: 'Decision gate',
+    value: 'SRE + QA approval required'
+  }
+];
+
+const taskDetailHandoff = [
+  {
+    label: 'Primary operator',
+    value: 'Nina Park (EU morning)'
+  },
+  {
+    label: 'Backup operator',
+    value: 'Arjun Mehta (US afternoon)'
+  },
+  {
+    label: 'Escalation SLA',
+    value: 'Acknowledge within 10 minutes'
+  }
+];
+
+const releaseFaq = [
+  {
+    question: 'Can rollout continue with one blocked region?',
+    answer: 'Yes, if error rate remains below 1% and rollback is armed.'
+  },
+  {
+    question: 'Who approves Wave 3?',
+    answer: 'SRE on-call and QA duty engineer in release-control.'
+  },
+  {
+    question: 'Where are customer notes posted?',
+    answer: 'In #release-notes within 20 minutes after stabilization.'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -89,6 +134,39 @@ const releaseHealthChips = releaseHealth
   )
   .join('');
 
+const releaseGuidanceItems = releaseGuidance
+  .map(
+    (item) => `
+      <li class="release-guidance-item">
+        <span>${item.label}</span>
+        ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
+const taskDetailHandoffItems = taskDetailHandoff
+  .map(
+    (item) => `
+      <li class="operator-handoff-item">
+        <span>${item.label}</span>
+        ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
+const releaseFaqItems = releaseFaq
+  .map(
+    (item) => `
+      <li class="release-faq-item">
+        <p class="release-faq-question">${item.question}</p>
+        <p class="release-faq-answer">${item.answer}</p>
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -108,6 +186,13 @@ document.querySelector('#app').innerHTML = `
       ${railItems}
     </section>
 
+    <section class="release-guidance-ribbon" aria-label="Release guidance ribbon">
+      <p class="release-guidance-title">Release guidance</p>
+      <ul class="release-guidance-list">
+        ${releaseGuidanceItems}
+      </ul>
+    </section>
+
     <section class="release-health-strip" aria-label="Release health summary">
       <p class="release-health-title">Release health</p>
       <ul class="release-health-list">
@@ -123,6 +208,16 @@ document.querySelector('#app').innerHTML = `
 
     <section class="feature-grid" aria-label="Core release metrics">
       ${cards}
+    </section>
+
+    <section class="task-detail-view" aria-label="Task detail view">
+      <p class="task-detail-title">Task detail · rollout-4821</p>
+      <article class="operator-handoff-panel" aria-label="Operator handoff panel">
+        <p class="operator-handoff-title">Operator handoff</p>
+        <ul class="operator-handoff-list">
+          ${taskDetailHandoffItems}
+        </ul>
+      </article>
     </section>
 
     <section class="support-handoff" aria-label="Support handoff note">
@@ -147,6 +242,12 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <section class="release-faq" aria-label="Release FAQ">
+          <p class="release-faq-title">Release FAQ</p>
+          <ul class="release-faq-list">
+            ${releaseFaqItems}
+          </ul>
+        </section>
       </div>
     </footer>
   </main>
