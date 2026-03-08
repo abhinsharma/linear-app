@@ -146,6 +146,7 @@ document.querySelector('#app').innerHTML = `
             Reviewer: release-reviewers@acme.dev
           </a>
         </p>
+        <p class="footer-operator-hint">Operator hint: Run go/no-go after checklist reaches 10/10.</p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
       </div>
     </footer>
