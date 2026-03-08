@@ -96,18 +96,28 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>Release Dashboard</p>
-      <p class="footer-meta">
-        Updated every 5 minutes
-        <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
-        <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-        <a
-          class="reviewer-contact-chip"
-          href="mailto:release-reviewers@acme.dev"
-          aria-label="Reviewer contact"
-        >
-          Reviewer: release-reviewers@acme.dev
-        </a>
-      </p>
+      <div class="footer-side">
+        <p class="footer-meta">
+          Updated every 5 minutes
+          <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+          <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
+          <a
+            class="reviewer-contact-chip"
+            href="mailto:release-reviewers@acme.dev"
+            aria-label="Reviewer contact"
+          >
+            Reviewer: release-reviewers@acme.dev
+          </a>
+        </p>
+        <section class="release-faq" aria-label="Release FAQ helper">
+          <p class="release-faq-title">Release FAQ</p>
+          <ul class="release-faq-list">
+            <li><span>Freeze window</span> Tue 4:00 PM PT</li>
+            <li><span>Escalation</span> #release-control</li>
+            <li><span>Rollback owner</span> Platform Team</li>
+          </ul>
+        </section>
+      </div>
     </footer>
   </main>
 `;

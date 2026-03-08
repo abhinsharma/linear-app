@@ -195,11 +195,19 @@ body {
   margin: 0;
 }
 
+.footer-side {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
 .footer-meta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .owner-chip {
@@ -246,6 +254,48 @@ body {
 
 .reviewer-contact-chip:hover {
   background: #fdf3d7;
+}
+
+.release-faq {
+  width: min(100%, 320px);
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.release-faq-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.release-faq-list {
+  margin: 0.38rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.22rem;
+}
+
+.release-faq-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: #2a3c58;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.release-faq-list span {
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .support-handoff {
