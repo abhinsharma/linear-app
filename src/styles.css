@@ -202,6 +202,11 @@ body {
   flex-wrap: wrap;
 }
 
+.footer-note {
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;

@@ -101,6 +101,7 @@ document.querySelector('#app').innerHTML = `
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-checklist-chip" aria-label="Release checklist status">Checklist: 9/10 complete</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
+        <span class="footer-note">Release owners verify rollout readiness.</span>
         <a
           class="reviewer-contact-chip"
           href="mailto:release-reviewers@acme.dev"
