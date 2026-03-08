@@ -273,6 +273,16 @@ body {
   color: var(--muted);
 }
 
+.footer-escalation-help {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.footer-escalation-help a {
+  color: inherit;
+  font-weight: 700;
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;

@@ -147,6 +147,10 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <p class="footer-escalation-help">
+          Need escalation help? Use the release runbook or contact
+          <a href="mailto:release-ops@acme.dev">release-ops@acme.dev</a>.
+        </p>
       </div>
     </footer>
   </main>
