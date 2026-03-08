@@ -36,6 +36,27 @@ const metricRail = [
   }
 ];
 
+const releaseReadiness = [
+  {
+    label: 'Quality Gates',
+    score: 92,
+    weight: '40%',
+    tone: 'good'
+  },
+  {
+    label: 'Rollout Safety',
+    score: 88,
+    weight: '35%',
+    tone: 'good'
+  },
+  {
+    label: 'Operational Coverage',
+    score: 74,
+    weight: '25%',
+    tone: 'warning'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -60,6 +81,18 @@ const railItems = metricRail
   )
   .join('');
 
+const readinessItems = releaseReadiness
+  .map(
+    (item) => `
+      <li class="readiness-item readiness-item--${item.tone}">
+        <p class="readiness-item-label">${item.label}</p>
+        <p class="readiness-item-score">${item.score}%</p>
+        <p class="readiness-item-weight">Weight: ${item.weight}</p>
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -77,6 +110,18 @@ document.querySelector('#app').innerHTML = `
 
     <section class="metric-rail" aria-label="Production rollout metrics">
       ${railItems}
+    </section>
+
+    <section class="readiness-score-card" aria-label="Release readiness score card">
+      <p class="readiness-score-card-label">Release readiness score</p>
+      <div class="readiness-score-card-header">
+        <p class="readiness-score-card-value">85</p>
+        <p class="readiness-score-card-scale">/100</p>
+      </div>
+      <p class="readiness-score-card-note">Ready for staged promotion after operations sign-off.</p>
+      <ul class="readiness-score-list">
+        ${readinessItems}
+      </ul>
     </section>
 
     <section class="status-strip" aria-label="Deployment status overview">
