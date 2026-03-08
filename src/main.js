@@ -54,6 +54,24 @@ const releaseHealth = [
   }
 ];
 
+const releasePulse = [
+  {
+    lane: 'API',
+    status: 'Stable',
+    note: 'Error rate below 0.2% for the last 30 minutes.'
+  },
+  {
+    lane: 'Web',
+    status: 'Watching',
+    note: 'Core flow latency rose 5% after the latest canary.'
+  },
+  {
+    lane: 'Worker',
+    status: 'Ready',
+    note: 'Backfill queue is drained and rollback snapshot is verified.'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -89,6 +107,18 @@ const releaseHealthChips = releaseHealth
   )
   .join('');
 
+const pulseItems = releasePulse
+  .map(
+    (item) => `
+      <li class="release-pulse-item">
+        <p class="release-pulse-lane">${item.lane}</p>
+        <p class="release-pulse-status">${item.status}</p>
+        <p class="release-pulse-note">${item.note}</p>
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -106,6 +136,19 @@ document.querySelector('#app').innerHTML = `
 
     <section class="metric-rail" aria-label="Production rollout metrics">
       ${railItems}
+    </section>
+
+    <section class="release-pulse-banner" aria-label="Release pulse">
+      <div class="release-pulse-header">
+        <p class="release-pulse-badge">Release Pulse</p>
+        <p class="release-pulse-timestamp">Updated 2 minutes ago</p>
+      </div>
+      <p class="release-pulse-summary">
+        Canary traffic is expanding from 35% to 50% while rollback checkpoints remain green.
+      </p>
+      <ul class="release-pulse-list">
+        ${pulseItems}
+      </ul>
     </section>
 
     <section class="release-health-strip" aria-label="Release health summary">
