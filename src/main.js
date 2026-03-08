@@ -18,6 +18,24 @@ const features = [
   }
 ];
 
+const metricRail = [
+  {
+    label: 'Active rollout',
+    value: '3 services',
+    detail: 'Wave 2 of 4 is currently in production.'
+  },
+  {
+    label: 'Blockers',
+    value: '2 open',
+    detail: 'Security sign-off and data migration review.'
+  },
+  {
+    label: 'Approval ETA',
+    value: '42 min',
+    detail: 'Median based on the last 10 production releases.'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -25,6 +43,18 @@ const cards = features
         <h3>${feature.title}</h3>
         <p class="feature-value">${feature.value}</p>
         <p class="feature-note">${feature.note}</p>
+      </article>
+    `
+  )
+  .join('');
+
+const railItems = metricRail
+  .map(
+    (metric) => `
+      <article class="metric-rail-item">
+        <p class="metric-label">${metric.label}</p>
+        <p class="metric-value">${metric.value}</p>
+        <p class="metric-detail">${metric.detail}</p>
       </article>
     `
   )
@@ -43,6 +73,10 @@ document.querySelector('#app').innerHTML = `
         <p role="listitem"><span>99.95%</span> Uptime this month</p>
         <p role="listitem"><span>7 min</span> Mean deploy time</p>
       </div>
+    </section>
+
+    <section class="metric-rail" aria-label="Production rollout metrics">
+      ${railItems}
     </section>
 
     <section class="status-strip" aria-label="Deployment status overview">
