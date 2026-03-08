@@ -36,6 +36,33 @@ const metricRail = [
   }
 ];
 
+const rolloutChecklist = [
+  {
+    item: 'Migration dry run completed',
+    owner: 'Data Platform',
+    due: 'Due now',
+    done: true
+  },
+  {
+    item: 'Canary monitoring on key endpoints',
+    owner: 'SRE',
+    due: 'Due in 20 min',
+    done: true
+  },
+  {
+    item: 'Customer-facing release note review',
+    owner: 'Product',
+    due: 'Due in 45 min',
+    done: false
+  },
+  {
+    item: 'On-call handoff confirmation',
+    owner: 'Release Ops',
+    due: 'Due in 60 min',
+    done: false
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -56,6 +83,22 @@ const railItems = metricRail
         <p class="metric-value">${metric.value}</p>
         <p class="metric-detail">${metric.detail}</p>
       </article>
+    `
+  )
+  .join('');
+
+const rolloutChecklistItems = rolloutChecklist
+  .map(
+    (check) => `
+      <li class="rollout-checklist-item">
+        <div class="rollout-checklist-item-main">
+          <p class="rollout-checklist-item-title">${check.item}</p>
+          <p class="rollout-checklist-item-meta">Owner: ${check.owner} · ${check.due}</p>
+        </div>
+        <span class="rollout-checklist-status rollout-checklist-status--${check.done ? 'done' : 'pending'}">
+          ${check.done ? 'Done' : 'Pending'}
+        </span>
+      </li>
     `
   )
   .join('');
@@ -87,6 +130,19 @@ document.querySelector('#app').innerHTML = `
 
     <section class="feature-grid" aria-label="Core release metrics">
       ${cards}
+    </section>
+
+    <section class="task-detail-view" aria-label="Task detail view">
+      <article class="rollout-checklist-panel" aria-label="Rollout checklist panel">
+        <div class="rollout-checklist-header">
+          <p class="rollout-checklist-kicker">Task detail</p>
+          <h2>Rollout Checklist</h2>
+          <p>Track the minimum gates before promoting this release to the next wave.</p>
+        </div>
+        <ul class="rollout-checklist-list">
+          ${rolloutChecklistItems}
+        </ul>
+      </article>
     </section>
 
     <section class="support-handoff" aria-label="Support handoff note">
