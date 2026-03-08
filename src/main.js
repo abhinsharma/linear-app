@@ -100,7 +100,6 @@ document.querySelector('#app').innerHTML = `
         Updated every 5 minutes
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-        <span class="release-helper-note" aria-label="Release helper note">Need release help? Start with the deploy runbook.</span>
         <a
           class="reviewer-contact-chip"
           href="mailto:release-reviewers@acme.dev"
