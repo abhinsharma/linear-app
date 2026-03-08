@@ -98,7 +98,7 @@ document.querySelector('#app').innerHTML = `
       <p>Release Dashboard</p>
       <p class="footer-meta">
         Updated every 5 minutes
-        <span>Retry-resume: Verified</span>
+        <span class="retry-resume-check">Retry-resume verification: Verified</span>
         <span class="release-chip" aria-label="Current release">Release v2.5</span>
         <br />
         <span>Need help? Check release notes.</span>
