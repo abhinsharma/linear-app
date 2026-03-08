@@ -100,7 +100,7 @@ document.querySelector('#app').innerHTML = `
         Updated every 5 minutes
         <span class="release-chip" aria-label="Current release">Release v2.5</span>
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
-        <span class="release-note-chip" aria-label="Release note label">RN v2.4</span>
+        <span class="owner-chip" aria-label="Release label">Release v2.4</span>
         <br />
         <span class="owner-support-helper">Need owner support? Ping #release-control.</span>
         <span class="release-notes-badge" aria-label="Release notes status">RN: Ready</span>
