@@ -241,6 +241,9 @@ document.querySelector('#app').innerHTML = `
             Reviewer: release-reviewers@acme.dev
           </a>
         </p>
+        <p class="footer-release-navigation-helper">
+          Need release navigation help? Start with Task detail for owner context, then check Release FAQ for policy guidance.
+        </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
         <section class="release-faq" aria-label="Release FAQ">
           <p class="release-faq-title">Release FAQ</p>
