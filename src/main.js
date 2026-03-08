@@ -36,6 +36,21 @@ const metricRail = [
   }
 ];
 
+const releaseMetrics = [
+  {
+    label: 'Readiness',
+    value: '92%'
+  },
+  {
+    label: 'Approvals',
+    value: '7/8'
+  },
+  {
+    label: 'Risk',
+    value: 'Low'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -60,6 +75,17 @@ const railItems = metricRail
   )
   .join('');
 
+const releaseMetricRows = releaseMetrics
+  .map(
+    (metric) => `
+      <li>
+        <span>${metric.label}</span>
+        ${metric.value}
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -77,6 +103,17 @@ document.querySelector('#app').innerHTML = `
 
     <section class="metric-rail" aria-label="Production rollout metrics">
       ${railItems}
+    </section>
+
+    <section class="release-metrics-card" aria-label="Release metrics card">
+      <p class="release-metrics-kicker">Release Metrics</p>
+      <div class="release-metrics-headline">
+        <p class="release-metrics-score">92</p>
+        <p class="release-metrics-trend">+4 this week</p>
+      </div>
+      <ul class="release-metrics-list">
+        ${releaseMetricRows}
+      </ul>
     </section>
 
     <section class="status-strip" aria-label="Deployment status overview">
