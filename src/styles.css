@@ -273,6 +273,11 @@ body {
   color: var(--muted);
 }
 
+.footer-contact-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;

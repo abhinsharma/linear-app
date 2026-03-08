@@ -146,6 +146,7 @@ document.querySelector('#app').innerHTML = `
             Reviewer: release-reviewers@acme.dev
           </a>
         </p>
+        <p class="footer-contact-hint">Need a release approver? Contact release-reviewers@acme.dev.</p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
       </div>
     </footer>
