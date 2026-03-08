@@ -273,6 +273,11 @@ body {
   color: var(--muted);
 }
 
+.rollout-readiness-blurb {
+  font-size: 0.73rem;
+  color: #1d5e1d;
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;
