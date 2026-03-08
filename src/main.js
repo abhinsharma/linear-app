@@ -147,6 +147,7 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <p class="footer-cadence-note">Cadence: Weekly release train (Wed)</p>
       </div>
     </footer>
   </main>

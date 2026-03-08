@@ -273,6 +273,11 @@ body {
   color: var(--muted);
 }
 
+.footer-cadence-note {
+  font-size: 0.71rem;
+  color: var(--muted);
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;
