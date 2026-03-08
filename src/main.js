@@ -60,6 +60,16 @@ const railItems = metricRail
   )
   .join('');
 
+const releaseNotesHighlights = [
+  'Improved staged rollout controls with service-level pause and resume actions.',
+  'Added reviewer contact chips so incident responders can route faster.',
+  'Expanded rollback readiness coverage to 98% of production services.'
+];
+
+const releaseNotesItems = releaseNotesHighlights
+  .map((note) => `<li>${note}</li>`)
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -107,7 +117,68 @@ document.querySelector('#app').innerHTML = `
         >
           Reviewer: release-reviewers@acme.dev
         </a>
+        <button
+          type="button"
+          class="release-notes-action"
+          aria-haspopup="dialog"
+          aria-controls="release-notes-drawer"
+        >
+          Release notes
+        </button>
       </p>
     </footer>
+
+    <div class="release-notes-overlay" data-overlay hidden></div>
+    <aside
+      id="release-notes-drawer"
+      class="release-notes-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="release-notes-title"
+      hidden
+    >
+      <header class="release-notes-header">
+        <h2 id="release-notes-title">Release Notes</h2>
+        <button type="button" class="release-notes-close" data-close aria-label="Close release notes">
+          Close
+        </button>
+      </header>
+      <p class="release-notes-summary">
+        Current release notes are ready for stakeholder review.
+      </p>
+      <ul class="release-notes-list">
+        ${releaseNotesItems}
+      </ul>
+    </aside>
   </main>
 `;
+
+const releaseNotesAction = document.querySelector('.release-notes-action');
+const releaseNotesDrawer = document.querySelector('#release-notes-drawer');
+const releaseNotesOverlay = document.querySelector('[data-overlay]');
+const releaseNotesClose = document.querySelector('[data-close]');
+
+const openReleaseNotes = () => {
+  releaseNotesDrawer.hidden = false;
+  releaseNotesOverlay.hidden = false;
+  document.body.classList.add('drawer-open');
+  releaseNotesAction.setAttribute('aria-expanded', 'true');
+  window.requestAnimationFrame(() => {
+    releaseNotesDrawer.classList.add('is-open');
+  });
+};
+
+const closeReleaseNotes = () => {
+  releaseNotesDrawer.classList.remove('is-open');
+  releaseNotesOverlay.hidden = true;
+  document.body.classList.remove('drawer-open');
+  releaseNotesAction.setAttribute('aria-expanded', 'false');
+  window.setTimeout(() => {
+    releaseNotesDrawer.hidden = true;
+  }, 220);
+};
+
+releaseNotesAction.setAttribute('aria-expanded', 'false');
+releaseNotesAction.addEventListener('click', openReleaseNotes);
+releaseNotesClose.addEventListener('click', closeReleaseNotes);
+releaseNotesOverlay.addEventListener('click', closeReleaseNotes);
