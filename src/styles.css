@@ -202,6 +202,47 @@ body {
   flex-wrap: wrap;
 }
 
+.release-contact-helper {
+  margin-top: 0.28rem;
+  width: min(100%, 360px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.45rem 0.55rem;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.release-contact-helper-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.release-contact-helper-actions {
+  margin-top: 0.3rem;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.release-contact-helper-actions a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #c6d6ef;
+  background: #eef4ff;
+  color: #15428a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.release-contact-helper-actions a:hover {
+  background: #e2edff;
+}
 .owner-chip {
   display: inline-flex;
   align-items: center;

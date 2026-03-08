@@ -108,6 +108,13 @@ document.querySelector('#app').innerHTML = `
           Reviewer: release-reviewers@acme.dev
         </a>
       </p>
+      <div class="release-contact-helper" aria-label="Release contact helper panel">
+        <p class="release-contact-helper-title">Need release help?</p>
+        <div class="release-contact-helper-actions">
+          <a href="mailto:release-ops@acme.dev">Email release-ops@acme.dev</a>
+          <a href="https://slack.com/app_redirect?channel=release-control">Open #release-control</a>
+        </div>
+      </div>
     </footer>
   </main>
 `;
