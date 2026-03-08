@@ -96,18 +96,24 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>Release Dashboard</p>
-      <p class="footer-meta">
-        Updated every 5 minutes
-        <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
-        <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-        <a
-          class="reviewer-contact-chip"
-          href="mailto:release-reviewers@acme.dev"
-          aria-label="Reviewer contact"
-        >
-          Reviewer: release-reviewers@acme.dev
-        </a>
-      </p>
+      <div class="release-summary">
+        <p class="footer-meta">
+          Updated every 5 minutes
+          <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+          <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
+          <a
+            class="reviewer-contact-chip"
+            href="mailto:release-reviewers@acme.dev"
+            aria-label="Reviewer contact"
+          >
+            Reviewer: release-reviewers@acme.dev
+          </a>
+        </p>
+        <p class="release-blocker-note">
+          <span>Blocker</span>
+          Security approval is pending before production promotion.
+        </p>
+      </div>
     </footer>
   </main>
 `;

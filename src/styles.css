@@ -202,6 +202,34 @@ body {
   flex-wrap: wrap;
 }
 
+.release-summary {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.release-blocker-note {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid #f1d5a8;
+  background: #fff6e8;
+  color: #7a4b00;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.release-blocker-note span {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;
