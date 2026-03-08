@@ -273,6 +273,11 @@ body {
   color: var(--muted);
 }
 
+.footer-faq-teaser {
+  font-size: 0.73rem;
+  color: var(--muted);
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;

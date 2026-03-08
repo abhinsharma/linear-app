@@ -146,6 +146,7 @@ document.querySelector('#app').innerHTML = `
             Reviewer: release-reviewers@acme.dev
           </a>
         </p>
+        <p class="footer-faq-teaser">New here? Start with the release FAQ for rollout and rollback basics.</p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
       </div>
     </footer>
