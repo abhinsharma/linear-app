@@ -115,7 +115,7 @@ document.querySelector('#app').innerHTML = `
         >
           Reviewer: release-reviewers@acme.dev
         </a>
-        <span class="footer-summary">Summary: Refer to the helper line above and the cross-repo support note.</span>
+        <span class="footer-summary">Summary: See the helper line above and the cross-repo support note.</span>
       </p>
     </footer>
   </main>
