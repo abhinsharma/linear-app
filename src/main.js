@@ -107,7 +107,7 @@ document.querySelector('#app').innerHTML = `
         >
           Reviewer: release-reviewers@acme.dev
         </a>
-        <small class="release-helper-note">Release helper: confirm rollback owner before clicking approve.</small>
+        <small class="release-helper-note">Release helper: need guidance? Start with the deploy runbook.</small>
       </p>
     </footer>
   </main>
