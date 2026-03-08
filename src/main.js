@@ -36,6 +36,25 @@ const metricRail = [
   }
 ];
 
+const qaSummary = [
+  {
+    label: 'Scenarios',
+    value: '18 active'
+  },
+  {
+    label: 'Pass Rate',
+    value: '94.6%'
+  },
+  {
+    label: 'P0 Issues',
+    value: '1 open'
+  },
+  {
+    label: 'Next Run',
+    value: '09:30 PT'
+  }
+];
+
 const releaseChecklist = [
   {
     item: 'Automated regression',
@@ -75,6 +94,17 @@ const railItems = metricRail
   )
   .join('');
 
+const qaSummaryItems = qaSummary
+  .map(
+    (item) => `
+      <article class="qa-summary-item">
+        <p class="qa-summary-item-label">${item.label}</p>
+        <p class="qa-summary-item-value">${item.value}</p>
+      </article>
+    `
+  )
+  .join('');
+
 const checklistItems = releaseChecklist
   .map(
     (item) => `
@@ -98,6 +128,13 @@ document.querySelector('#app').innerHTML = `
         <p role="listitem"><span>34</span> Active services</p>
         <p role="listitem"><span>99.95%</span> Uptime this month</p>
         <p role="listitem"><span>7 min</span> Mean deploy time</p>
+      </div>
+    </section>
+
+    <section class="qa-summary-panel" aria-label="QA playground summary">
+      <p class="qa-summary-title">QA Playground Summary</p>
+      <div class="qa-summary-grid" role="list">
+        ${qaSummaryItems}
       </div>
     </section>
 

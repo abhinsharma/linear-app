@@ -90,6 +90,54 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
+.qa-summary-panel {
+  margin-top: 0.7rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.qa-summary-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.qa-summary-grid {
+  margin-top: 0.45rem;
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.qa-summary-item {
+  margin: 0;
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.qa-summary-item-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.qa-summary-item-value {
+  margin: 0.2rem 0 0;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .metric-rail-item {
   padding: 0.7rem 0.85rem;
   border: 1px solid var(--border);
