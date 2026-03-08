@@ -96,19 +96,22 @@ document.querySelector('#app').innerHTML = `
 
     <footer class="footer">
       <p>Release Dashboard</p>
-      <p class="footer-meta">
-        Updated every 5 minutes
-        <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
-        <span class="release-checklist-chip" aria-label="Release checklist status">Checklist: 9/10 complete</span>
-        <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-        <a
-          class="reviewer-contact-chip"
-          href="mailto:release-reviewers@acme.dev"
-          aria-label="Reviewer contact"
-        >
-          Reviewer: release-reviewers@acme.dev
-        </a>
-      </p>
+      <div class="footer-details">
+        <p class="footer-meta">
+          Updated every 5 minutes
+          <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+          <span class="release-checklist-chip" aria-label="Release checklist status">Checklist: 9/10 complete</span>
+          <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
+          <a
+            class="reviewer-contact-chip"
+            href="mailto:release-reviewers@acme.dev"
+            aria-label="Reviewer contact"
+          >
+            Reviewer: release-reviewers@acme.dev
+          </a>
+        </p>
+        <p class="footer-release-note">Release date: March 4, 2026</p>
+      </div>
     </footer>
   </main>
 `;

@@ -195,11 +195,23 @@ body {
   margin: 0;
 }
 
+.footer-details {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.18rem;
+}
+
 .footer-meta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
   flex-wrap: wrap;
+}
+
+.footer-release-note {
+  font-size: 0.73rem;
+  color: var(--muted);
 }
 
 .owner-chip {
