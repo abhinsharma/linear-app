@@ -215,6 +215,20 @@ body {
   line-height: 1.2;
 }
 
+.release-checklist-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #bfdcbf;
+  background: #edf9ee;
+  color: #1d5e1d;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
 .release-notes-badge {
   display: inline-flex;
   align-items: center;
