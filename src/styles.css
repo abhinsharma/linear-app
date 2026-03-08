@@ -202,6 +202,21 @@ body {
   flex-wrap: wrap;
 }
 
+.footer-meta-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.release-readiness-note {
+  max-width: 62ch;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: #334862;
+  text-align: right;
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;
