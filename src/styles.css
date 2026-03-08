@@ -120,6 +120,65 @@ body {
   line-height: 1.35;
 }
 
+.release-health-strip {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.release-health-title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.release-health-list {
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.release-health-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #f4f8ff;
+  color: #0f3f88;
+  font-size: 0.73rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.release-health-chip span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.release-health-chip--good {
+  border-color: #bcd9bc;
+  background: #edf9ee;
+  color: #1d5e1d;
+}
+
+.release-health-chip--warning {
+  border-color: #e7c895;
+  background: #fff8ea;
+  color: #7a4a00;
+}
+
 .feature-grid {
   margin-top: 1.4rem;
   display: grid;

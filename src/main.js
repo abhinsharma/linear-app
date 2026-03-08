@@ -36,6 +36,24 @@ const metricRail = [
   }
 ];
 
+const releaseHealth = [
+  {
+    label: 'Stability',
+    value: 'Healthy',
+    tone: 'good'
+  },
+  {
+    label: 'Rollout',
+    value: 'Wave 2/4',
+    tone: 'info'
+  },
+  {
+    label: 'Issues',
+    value: '2 Open',
+    tone: 'warning'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -60,6 +78,17 @@ const railItems = metricRail
   )
   .join('');
 
+const releaseHealthChips = releaseHealth
+  .map(
+    (item) => `
+      <li class="release-health-chip release-health-chip--${item.tone}">
+        <span>${item.label}</span>
+        ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -77,6 +106,13 @@ document.querySelector('#app').innerHTML = `
 
     <section class="metric-rail" aria-label="Production rollout metrics">
       ${railItems}
+    </section>
+
+    <section class="release-health-strip" aria-label="Release health summary">
+      <p class="release-health-title">Release health</p>
+      <ul class="release-health-list">
+        ${releaseHealthChips}
+      </ul>
     </section>
 
     <section class="status-strip" aria-label="Deployment status overview">
