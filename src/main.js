@@ -98,6 +98,7 @@ document.querySelector('#app').innerHTML = `
       <p>Release Dashboard</p>
       <p class="footer-meta">
         Updated every 5 minutes
+        <span class="release-chip" aria-label="Current release">Release v2.5</span>
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-note-chip" aria-label="Release note label">RN v2.4</span>
         <br />
