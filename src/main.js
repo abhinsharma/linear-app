@@ -45,6 +45,12 @@ document.querySelector('#app').innerHTML = `
       </div>
     </section>
 
+    <section class="status-strip" aria-label="Deployment status overview">
+      <p><span>Environment</span> Production</p>
+      <p><span>Release Stage</span> Stabilization</p>
+      <p><span>Deploy Owner</span> Platform Team</p>
+    </section>
+
     <section class="feature-grid" aria-label="Core release metrics">
       ${cards}
     </section>
