@@ -102,6 +102,15 @@ document.querySelector('#app').innerHTML = `
         <span class="release-checklist-chip" aria-label="Release checklist status">Checklist: 9/10 complete</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
         <a
+          class="review-handoff-chip"
+          href="https://acme.dev/runbooks/release-review-handoff"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open review handoff runbook"
+        >
+          Review handoff
+        </a>
+        <a
           class="reviewer-contact-chip"
           href="mailto:release-reviewers@acme.dev"
           aria-label="Reviewer contact"

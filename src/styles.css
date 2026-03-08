@@ -258,6 +258,26 @@ body {
   text-decoration: none;
 }
 
+.review-handoff-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #c8cde1;
+  background: #f3f5fb;
+  color: #24355a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.review-handoff-chip:hover,
+.review-handoff-chip:focus-visible {
+  background: #e8ecf8;
+}
+
 .reviewer-contact-chip:hover {
   background: #fdf3d7;
 }
