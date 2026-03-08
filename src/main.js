@@ -87,6 +87,21 @@ const operatorReadiness = [
   }
 ];
 
+const launchFaq = [
+  {
+    question: 'Who approves launch?',
+    answer: 'Release Operations + on-call EM.'
+  },
+  {
+    question: 'Rollback trigger?',
+    answer: '5% checkout error spike for 10 minutes.'
+  },
+  {
+    question: 'Where to escalate?',
+    answer: '#release-control (PagerDuty bridge).'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -140,6 +155,17 @@ const readinessItems = operatorReadiness
       <li class="operator-readiness-item">
         <span>${item.label}</span>
         ${item.status}
+      </li>
+    `
+  )
+  .join('');
+
+const launchFaqItems = launchFaq
+  .map(
+    (item) => `
+      <li class="launch-faq-item">
+        <p class="launch-faq-question">${item.question}</p>
+        <p class="launch-faq-answer">${item.answer}</p>
       </li>
     `
   )
@@ -226,6 +252,12 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <section class="launch-faq" aria-label="Launch FAQ">
+          <p class="launch-faq-title">Launch FAQ</p>
+          <ul class="launch-faq-list">
+            ${launchFaqItems}
+          </ul>
+        </section>
       </div>
     </footer>
   </main>
