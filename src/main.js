@@ -94,6 +94,15 @@ document.querySelector('#app').innerHTML = `
       <p><span>Escalation</span> Page <strong>#release-control</strong> in PagerDuty for Sev-1 or no owner acknowledgement within 15 minutes.</p>
     </section>
 
+    <section class="release-readiness" aria-label="Release readiness checklist">
+      <p class="release-readiness-title">Release readiness</p>
+      <ul>
+        <li><span class="readiness-state readiness-state-ready">Ready</span> Release notes finalized</li>
+        <li><span class="readiness-state readiness-state-ready">Ready</span> Rollback runbook verified</li>
+        <li><span class="readiness-state readiness-state-pending">Pending</span> Final security sign-off</li>
+      </ul>
+    </section>
+
     <footer class="footer">
       <p>Release Dashboard</p>
       <p class="footer-meta">
