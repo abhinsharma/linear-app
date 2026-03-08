@@ -194,3 +194,31 @@ body {
 .footer p {
   margin: 0;
 }
+
+.support-handoff {
+  margin-top: 1rem;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.support-handoff p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.support-handoff p + p {
+  margin-top: 0.28rem;
+}
+
+.support-handoff span {
+  margin-right: 0.35rem;
+  color: var(--text);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}

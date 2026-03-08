@@ -89,6 +89,11 @@ document.querySelector('#app').innerHTML = `
       ${cards}
     </section>
 
+    <section class="support-handoff" aria-label="Support handoff note">
+      <p><span>Support handoff</span> Owner: Release Operations (Jordan Lee, on-call)</p>
+      <p><span>Escalation</span> Page <strong>#release-control</strong> in PagerDuty for Sev-1 or no owner acknowledgement within 15 minutes.</p>
+    </section>
+
     <footer class="footer">
       <p>Release Dashboard</p>
       <p>Updated every 5 minutes</p>
