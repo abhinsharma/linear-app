@@ -230,6 +230,20 @@ body {
   line-height: 1.2;
 }
 
+.release-notes-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #b9d4ff;
+  background: #edf4ff;
+  color: #0e4aa3;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
 .support-handoff {
   margin-top: 1rem;
   padding: 0.65rem 0.8rem;

@@ -99,6 +99,7 @@ document.querySelector('#app').innerHTML = `
       <p class="footer-meta">
         Updated every 5 minutes
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+        <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
       </p>
       <p class="footer-approval-contact" aria-label="Approval contact">
         Approval contact: <a href="mailto:release-approvals@acme.dev">release-approvals@acme.dev</a>
