@@ -61,53 +61,71 @@ const railItems = metricRail
   .join('');
 
 document.querySelector('#app').innerHTML = `
-  <main class="dashboard" aria-label="Release dashboard">
-    <section class="hero">
-      <p class="badge">Release Center</p>
-      <h1>Ship Faster Without Losing Confidence</h1>
-      <p class="hero-copy">
-        Monitor deployment cadence, risk signals, and rollback posture in one compact view for engineering and product leaders.
-      </p>
-      <div class="hero-stats" role="list" aria-label="Release stats">
-        <p role="listitem"><span>34</span> Active services</p>
-        <p role="listitem"><span>99.95%</span> Uptime this month</p>
-        <p role="listitem"><span>7 min</span> Mean deploy time</p>
-      </div>
-    </section>
+  <div class="dashboard-layout">
+    <main class="dashboard" aria-label="Release dashboard">
+      <section class="hero">
+        <p class="badge">Release Center</p>
+        <h1>Ship Faster Without Losing Confidence</h1>
+        <p class="hero-copy">
+          Monitor deployment cadence, risk signals, and rollback posture in one compact view for engineering and product leaders.
+        </p>
+        <div class="hero-stats" role="list" aria-label="Release stats">
+          <p role="listitem"><span>34</span> Active services</p>
+          <p role="listitem"><span>99.95%</span> Uptime this month</p>
+          <p role="listitem"><span>7 min</span> Mean deploy time</p>
+        </div>
+      </section>
 
-    <section class="metric-rail" aria-label="Production rollout metrics">
-      ${railItems}
-    </section>
+      <section class="metric-rail" aria-label="Production rollout metrics">
+        ${railItems}
+      </section>
 
-    <section class="status-strip" aria-label="Deployment status overview">
-      <p><span>Environment</span> Production</p>
-      <p><span>Release Stage</span> Stabilization</p>
-      <p><span>Deploy Owner</span> Platform Team</p>
-    </section>
+      <section class="status-strip" aria-label="Deployment status overview">
+        <p><span>Environment</span> Production</p>
+        <p><span>Release Stage</span> Stabilization</p>
+        <p><span>Deploy Owner</span> Platform Team</p>
+      </section>
 
-    <section class="feature-grid" aria-label="Core release metrics">
-      ${cards}
-    </section>
+      <section class="feature-grid" aria-label="Core release metrics">
+        ${cards}
+      </section>
 
-    <section class="support-handoff" aria-label="Support handoff note">
-      <p><span>Support handoff</span> Owner: Release Operations (Jordan Lee, on-call)</p>
-      <p><span>Escalation</span> Page <strong>#release-control</strong> in PagerDuty for Sev-1 or no owner acknowledgement within 15 minutes.</p>
-    </section>
+      <section class="support-handoff" aria-label="Support handoff note">
+        <p><span>Support handoff</span> Owner: Release Operations (Jordan Lee, on-call)</p>
+        <p><span>Escalation</span> Page <strong>#release-control</strong> in PagerDuty for Sev-1 or no owner acknowledgement within 15 minutes.</p>
+      </section>
 
-    <footer class="footer">
-      <p>Release Dashboard</p>
-      <p class="footer-meta">
-        Updated every 5 minutes
-        <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
-        <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-        <a
-          class="reviewer-contact-chip"
-          href="mailto:release-reviewers@acme.dev"
-          aria-label="Reviewer contact"
-        >
-          Reviewer: release-reviewers@acme.dev
-        </a>
-      </p>
-    </footer>
-  </main>
+      <footer class="footer">
+        <p>Release Dashboard</p>
+        <p class="footer-meta">
+          Updated every 5 minutes
+          <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
+          <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
+          <a
+            class="reviewer-contact-chip"
+            href="mailto:release-reviewers@acme.dev"
+            aria-label="Reviewer contact"
+          >
+            Reviewer: release-reviewers@acme.dev
+          </a>
+        </p>
+      </footer>
+    </main>
+
+    <aside class="release-sidebar" aria-label="Release sidebar">
+      <div class="release-sidebar-spacer"></div>
+      <footer class="release-sidebar-footer">
+        <article class="release-help-block" aria-label="Release help block">
+          <p class="release-help-title">Release Help</p>
+          <p class="release-help-copy">
+            Need approval support or rollback guidance? Use the release runbook and contact the active operator.
+          </p>
+          <a class="release-help-link" href="mailto:release-ops@acme.dev">Email release-ops@acme.dev</a>
+          <a class="release-help-link" href="https://status.acme.dev/runbooks/release" target="_blank" rel="noreferrer">
+            Open release runbook
+          </a>
+        </article>
+      </footer>
+    </aside>
+  </div>
 `;
