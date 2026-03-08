@@ -98,7 +98,7 @@ document.querySelector('#app').innerHTML = `
       <p>Release Dashboard</p>
       <p class="footer-meta">
         Updated every 5 minutes
-        Owner guidance: confirm rollback steps before approving.
+        Owner guidance: verify on-call owner before final sign-off.
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
         <a
