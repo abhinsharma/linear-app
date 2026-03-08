@@ -72,6 +72,21 @@ const releasePulse = [
   }
 ];
 
+const operatorReadiness = [
+  {
+    label: 'Runbook',
+    status: 'Updated'
+  },
+  {
+    label: 'On-call handoff',
+    status: 'Acknowledged'
+  },
+  {
+    label: 'Rollback drill',
+    status: 'Passed'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -114,6 +129,17 @@ const pulseItems = releasePulse
         <p class="release-pulse-lane">${item.lane}</p>
         <p class="release-pulse-status">${item.status}</p>
         <p class="release-pulse-note">${item.note}</p>
+      </li>
+    `
+  )
+  .join('');
+
+const readinessItems = operatorReadiness
+  .map(
+    (item) => `
+      <li class="operator-readiness-item">
+        <span>${item.label}</span>
+        ${item.status}
       </li>
     `
   )
@@ -166,6 +192,16 @@ document.querySelector('#app').innerHTML = `
 
     <section class="feature-grid" aria-label="Core release metrics">
       ${cards}
+    </section>
+
+    <section class="operator-readiness" aria-label="Operator readiness block">
+      <p class="operator-readiness-title">Task detail operator readiness</p>
+      <p class="operator-readiness-summary">
+        Primary operator is confirmed for launch window with rollback ownership and escalation contacts active.
+      </p>
+      <ul class="operator-readiness-list">
+        ${readinessItems}
+      </ul>
     </section>
 
     <section class="support-handoff" aria-label="Support handoff note">

@@ -317,6 +317,59 @@ body {
   line-height: 1.45;
 }
 
+.operator-readiness {
+  margin-top: 1rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #cfdffb;
+  border-radius: 12px;
+  background: #f9fbff;
+}
+
+.operator-readiness-title {
+  margin: 0;
+  color: #154288;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.operator-readiness-summary {
+  margin: 0.38rem 0 0;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.operator-readiness-list {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.operator-readiness-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.16rem 0.48rem;
+  border-radius: 999px;
+  border: 1px solid #c3d7fa;
+  background: #edf4ff;
+  color: #0f4ca8;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.operator-readiness-item span {
+  color: var(--muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .footer {
   margin-top: 1.3rem;
   display: flex;
