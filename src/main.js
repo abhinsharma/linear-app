@@ -99,6 +99,7 @@ document.querySelector('#app').innerHTML = `
       <p class="footer-meta">
         Updated every 5 minutes
         Owner guidance: verify on-call owner before final sign-off.
+        Release checklist: confirm QA sign-off, rollback owner, and release notes.
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
         <a
