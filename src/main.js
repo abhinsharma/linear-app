@@ -36,6 +36,25 @@ const metricRail = [
   }
 ];
 
+const deploymentChecklist = [
+  {
+    item: 'Migration dry run',
+    status: 'Done'
+  },
+  {
+    item: 'On-call confirmation',
+    status: 'Done'
+  },
+  {
+    item: 'Rollback snapshot',
+    status: 'In progress'
+  },
+  {
+    item: 'Post-deploy monitor',
+    status: 'Pending'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -56,6 +75,17 @@ const railItems = metricRail
         <p class="metric-value">${metric.value}</p>
         <p class="metric-detail">${metric.detail}</p>
       </article>
+    `
+  )
+  .join('');
+
+const checklistItems = deploymentChecklist
+  .map(
+    (entry) => `
+      <li class="checklist-item checklist-item--${entry.status.toLowerCase().replace(' ', '-')}">
+        <span>${entry.item}</span>
+        ${entry.status}
+      </li>
     `
   )
   .join('');
@@ -83,6 +113,17 @@ document.querySelector('#app').innerHTML = `
       <p><span>Environment</span> Production</p>
       <p><span>Release Stage</span> Stabilization</p>
       <p><span>Deploy Owner</span> Platform Team</p>
+    </section>
+
+    <section class="task-detail-panel" aria-label="Task detail deployment checklist">
+      <div class="task-detail-head">
+        <p class="task-detail-kicker">Task Detail</p>
+        <p class="task-detail-id">LIN-2841</p>
+      </div>
+      <h2>Deployment Checklist</h2>
+      <ul class="task-detail-checklist">
+        ${checklistItems}
+      </ul>
     </section>
 
     <section class="feature-grid" aria-label="Core release metrics">
