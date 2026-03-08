@@ -147,6 +147,7 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <p class="footer-handoff-note">Handoff: QA sign-off sent to release approvers at 18:30 PT.</p>
       </div>
     </footer>
   </main>
