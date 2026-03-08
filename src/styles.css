@@ -195,6 +195,22 @@ body {
   margin: 0;
 }
 
+.footer-approval-contact {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.footer-approval-contact a {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-approval-contact a:hover {
+  text-decoration: underline;
+}
+
 .footer-meta {
   display: inline-flex;
   align-items: center;
