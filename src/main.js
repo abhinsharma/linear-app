@@ -100,6 +100,7 @@ document.querySelector('#app').innerHTML = `
         Updated every 5 minutes
         Owner guidance: verify on-call owner before final sign-off.
         Release checklist: confirm QA sign-off before final approval.
+        Release contact: email release-ops@acme.dev for final go-live coordination.
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
         <a
