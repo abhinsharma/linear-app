@@ -100,9 +100,13 @@ document.querySelector('#app').innerHTML = `
         Updated every 5 minutes
         <span class="owner-chip" aria-label="Release owner">Jordan Lee</span>
         <span class="release-notes-badge" aria-label="Release notes status">Release notes: Ready</span>
-      </p>
-      <p class="footer-approval-contact" aria-label="Approval contact">
-        Approval contact: <a href="mailto:release-approvals@acme.dev">release-approvals@acme.dev</a>
+        <a
+          class="reviewer-contact-chip"
+          href="mailto:release-reviewers@acme.dev"
+          aria-label="Reviewer contact"
+        >
+          Reviewer: release-reviewers@acme.dev
+        </a>
       </p>
     </footer>
   </main>

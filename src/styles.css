@@ -195,26 +195,11 @@ body {
   margin: 0;
 }
 
-.footer-approval-contact {
-  flex-basis: 100%;
-  font-size: 0.78rem;
-  color: var(--muted);
-}
-
-.footer-approval-contact a {
-  color: var(--text);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.footer-approval-contact a:hover {
-  text-decoration: underline;
-}
-
 .footer-meta {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .owner-chip {
@@ -242,6 +227,25 @@ body {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.01em;
+}
+
+.reviewer-contact-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #d8c7a0;
+  background: #fff9eb;
+  color: #6b4a07;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.reviewer-contact-chip:hover {
+  background: #fdf3d7;
 }
 
 .support-handoff {
