@@ -69,6 +69,21 @@ const releaseGuidance = [
   }
 ];
 
+const taskDetailHandoff = [
+  {
+    label: 'Primary operator',
+    value: 'Nina Park (EU morning)'
+  },
+  {
+    label: 'Backup operator',
+    value: 'Arjun Mehta (US afternoon)'
+  },
+  {
+    label: 'Escalation SLA',
+    value: 'Acknowledge within 10 minutes'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -108,6 +123,17 @@ const releaseGuidanceItems = releaseGuidance
   .map(
     (item) => `
       <li class="release-guidance-item">
+        <span>${item.label}</span>
+        ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
+const taskDetailHandoffItems = taskDetailHandoff
+  .map(
+    (item) => `
+      <li class="operator-handoff-item">
         <span>${item.label}</span>
         ${item.value}
       </li>
@@ -156,6 +182,16 @@ document.querySelector('#app').innerHTML = `
 
     <section class="feature-grid" aria-label="Core release metrics">
       ${cards}
+    </section>
+
+    <section class="task-detail-view" aria-label="Task detail view">
+      <p class="task-detail-title">Task detail · rollout-4821</p>
+      <article class="operator-handoff-panel" aria-label="Operator handoff panel">
+        <p class="operator-handoff-title">Operator handoff</p>
+        <ul class="operator-handoff-list">
+          ${taskDetailHandoffItems}
+        </ul>
+      </article>
     </section>
 
     <section class="support-handoff" aria-label="Support handoff note">
