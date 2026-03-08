@@ -241,6 +241,7 @@ document.querySelector('#app').innerHTML = `
             Reviewer: release-reviewers@acme.dev
           </a>
         </p>
+        <p class="footer-shortcut-hint">Shortcut: Press Shift + ? to view keyboard shortcuts.</p>
         <p class="rollout-readiness-blurb">
           Rollout readiness: All checks are in place. Awaiting final approval before PR publish.
         </p>

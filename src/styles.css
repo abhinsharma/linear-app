@@ -278,6 +278,11 @@ body {
   color: #1d5e1d;
 }
 
+.footer-shortcut-hint {
+  font-size: 0.73rem;
+  color: var(--muted);
+}
+
 .owner-chip {
   display: inline-flex;
   align-items: center;
