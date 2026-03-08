@@ -109,6 +109,9 @@ document.querySelector('#app').innerHTML = `
           Reviewer: release-reviewers@acme.dev
         </a>
       </p>
+      <p class="qa-evidence-note">
+        QA evidence: Wave 2 canary passed 22/22 core flows across API, web, and mobile; no Sev-1/Sev-2 regressions in the last 48 hours, holding at 25% traffic before Wave 3.
+      </p>
     </footer>
   </main>
 `;
