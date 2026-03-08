@@ -36,6 +36,21 @@ const metricRail = [
   }
 ];
 
+const releaseChecklist = [
+  {
+    item: 'Automated regression',
+    status: 'Passed'
+  },
+  {
+    item: 'Security sign-off',
+    status: 'In review'
+  },
+  {
+    item: 'Release notes',
+    status: 'Ready'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -56,6 +71,17 @@ const railItems = metricRail
         <p class="metric-value">${metric.value}</p>
         <p class="metric-detail">${metric.detail}</p>
       </article>
+    `
+  )
+  .join('');
+
+const checklistItems = releaseChecklist
+  .map(
+    (item) => `
+      <li>
+        <span>${item.item}</span>
+        <strong>${item.status}</strong>
+      </li>
     `
   )
   .join('');
@@ -83,6 +109,19 @@ document.querySelector('#app').innerHTML = `
       <p><span>Environment</span> Production</p>
       <p><span>Release Stage</span> Stabilization</p>
       <p><span>Deploy Owner</span> Platform Team</p>
+    </section>
+
+    <section class="release-checklist" aria-label="Release checklist">
+      <h2>Release Checklist</h2>
+      <ul>
+        ${checklistItems}
+      </ul>
+    </section>
+
+    <section class="quality-gate-summary" aria-label="Quality gate summary">
+      <p class="quality-gate-summary-label">Quality gate summary</p>
+      <p class="quality-gate-summary-value">2/3 passed</p>
+      <p class="quality-gate-summary-detail">Pending: Security sign-off</p>
     </section>
 
     <section class="feature-grid" aria-label="Core release metrics">
