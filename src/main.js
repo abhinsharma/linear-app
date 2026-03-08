@@ -54,6 +54,21 @@ const releaseHealth = [
   }
 ];
 
+const releaseGuidance = [
+  {
+    label: 'Next step',
+    value: 'Complete migration dry-run before Wave 3'
+  },
+  {
+    label: 'Owner',
+    value: 'Platform Release Ops'
+  },
+  {
+    label: 'Decision gate',
+    value: 'SRE + QA approval required'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -89,6 +104,17 @@ const releaseHealthChips = releaseHealth
   )
   .join('');
 
+const releaseGuidanceItems = releaseGuidance
+  .map(
+    (item) => `
+      <li class="release-guidance-item">
+        <span>${item.label}</span>
+        ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
 document.querySelector('#app').innerHTML = `
   <main class="dashboard" aria-label="Release dashboard">
     <section class="hero">
@@ -106,6 +132,13 @@ document.querySelector('#app').innerHTML = `
 
     <section class="metric-rail" aria-label="Production rollout metrics">
       ${railItems}
+    </section>
+
+    <section class="release-guidance-ribbon" aria-label="Release guidance ribbon">
+      <p class="release-guidance-title">Release guidance</p>
+      <ul class="release-guidance-list">
+        ${releaseGuidanceItems}
+      </ul>
     </section>
 
     <section class="release-health-strip" aria-label="Release health summary">

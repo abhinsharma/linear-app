@@ -120,6 +120,54 @@ body {
   line-height: 1.35;
 }
 
+.release-guidance-ribbon {
+  margin-top: 0.75rem;
+  border: 1px solid #c7d9f7;
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+  background: linear-gradient(140deg, #eef4ff, #f6f9ff);
+}
+
+.release-guidance-title {
+  margin: 0;
+  color: #0f4ea9;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.release-guidance-list {
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.release-guidance-item {
+  margin: 0;
+  border: 1px solid #d4e1f8;
+  border-radius: 10px;
+  padding: 0.45rem 0.55rem;
+  background: rgba(255, 255, 255, 0.78);
+  color: #17457d;
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.release-guidance-item span {
+  display: block;
+  margin-bottom: 0.12rem;
+  color: #436289;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
 .release-health-strip {
   margin-top: 0.75rem;
   padding: 0.6rem 0.8rem;
