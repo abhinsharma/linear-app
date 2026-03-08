@@ -84,6 +84,21 @@ const taskDetailHandoff = [
   }
 ];
 
+const releaseFaq = [
+  {
+    question: 'Can rollout continue with one blocked region?',
+    answer: 'Yes, if error rate remains below 1% and rollback is armed.'
+  },
+  {
+    question: 'Who approves Wave 3?',
+    answer: 'SRE on-call and QA duty engineer in release-control.'
+  },
+  {
+    question: 'Where are customer notes posted?',
+    answer: 'In #release-notes within 20 minutes after stabilization.'
+  }
+];
+
 const cards = features
   .map(
     (feature) => `
@@ -136,6 +151,17 @@ const taskDetailHandoffItems = taskDetailHandoff
       <li class="operator-handoff-item">
         <span>${item.label}</span>
         ${item.value}
+      </li>
+    `
+  )
+  .join('');
+
+const releaseFaqItems = releaseFaq
+  .map(
+    (item) => `
+      <li class="release-faq-item">
+        <p class="release-faq-question">${item.question}</p>
+        <p class="release-faq-answer">${item.answer}</p>
       </li>
     `
   )
@@ -216,6 +242,12 @@ document.querySelector('#app').innerHTML = `
           </a>
         </p>
         <p class="footer-release-note">Release date: March 4, 2026</p>
+        <section class="release-faq" aria-label="Release FAQ">
+          <p class="release-faq-title">Release FAQ</p>
+          <ul class="release-faq-list">
+            ${releaseFaqItems}
+          </ul>
+        </section>
       </div>
     </footer>
   </main>
